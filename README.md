@@ -1,6 +1,6 @@
-#Two-LAN Routing Lab with GNS3
+#Four-LAN Routing Lab with GNS3
 
-This project demonstrates a manually configured two-LAN network in GNS3 using Alpine Linux hosts and routers, static IPv4 addressing, a /30 router-to-router transit network, and end-to-end routing verified with ping and traceroute.
+This project demonstrates a manually configured four-LAN network in GNS3 using Alpine Linux hosts and routers, static IPv4 addressing, /30 router-to-router transit networks, and end-to-end routing verified with ping and traceroute.
 
 ## Skills Demonstrated
 
@@ -24,27 +24,24 @@ This project demonstrates a manually configured two-LAN network in GNS3 using Al
 
 ## Network Topology
 
-The lab contains two separate IPv4 LANs connected by two Linux routers. The routers communicate across a dedicated /30 transit network, and static routes allow hosts on each LAN to reach the other LAN.
+The lab contains four separate IPv4 LANs connected through four Linux routers. The routers communicate across dedicated /30 transit networks, and static routes allow hosts on each LAN to reach the others.
 
 ```text
-AlpinePC-1 (192.168.1.10/24)        
-	|
-     Switch1
-	|
-     Router1
-  eth0: 192.168.1.1/24
-  eth2: 10.0.12.1/30
-        |
-   10.0.12.0/30
-        |
-     Router2
-eth1: 10.0.12.2/30
-eth0: 192.168.2.1/24
-	|
-     Switch2
-	|
-AlpinePC-4 (192.168.2.10/24)
 
+LAN1                 Transit 1             LAN2                 Transit 2             LAN3                 Transit 3             LAN4
+
+PC1                                                                                                                             PC14
+192.168.1.10                                                                                                                     192.168.4.10
+   |                                                                                                                                 |
+Switch1                                                                                                                          Switch4
+   |                                                                                                                                 |
+Router1               10.0.12.0/30          Router2               10.0.23.0/30          Router3               10.0.34.0/30          Router4
+192.168.1.1      10.0.12.1 <----> 10.0.12.2  192.168.2.1      10.0.23.1 <----> 10.0.23.2  192.168.3.1      10.0.34.1 <----> 10.0.34.2  192.168.4.1
+                                              |                                          |
+                                           Switch2                                    Switch3
+                                              |                                          |
+                                           PC4                                        PC8
+                                      192.168.2.10                               192.168.3.10
 
 ```text
 ```
