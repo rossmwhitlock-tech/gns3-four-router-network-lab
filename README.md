@@ -43,7 +43,6 @@ Router1               10.0.12.0/30          Router2               10.0.23.0/30  
                                            PC4                                        PC8
                                       192.168.2.10                               192.168.3.10
 
-```text
 ```
 ## IP Addressing
 
@@ -67,3 +66,17 @@ Router1               10.0.12.0/30          Router2               10.0.23.0/30  
 ## Lab Evidence
 
 ![Four-router GNS3 topology with successful multi-hop traceroute](screenshots/4_LAN.png)
+
+## Verification
+
+- Verified end-to-end connectivity between LAN4 host `192.168.4.10` and LAN1 host `192.168.1.10` using `ping`.
+
+- Verified the full hop-by-hop path with `traceroute`: Router4 → Router3 → Router2 → Router1 → LAN1 host.
+
+- Observed TTL decrease across multiple routed hops, confirming packet forwarding through the four-router path.
+
+- Verified routing decisions and next-hop selection using `ip route` and `ip route get` on Linux hosts and routers.
+
+- Used ARP/neighbor-table inspection and Wireshark packet captures to validate local MAC resolution and packet behavior.
+
+
