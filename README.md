@@ -47,6 +47,7 @@ AlpinePC-4 (192.168.2.10/24)
 
 
 ```text
+```
 ## IP Addressing
 
 | Device | Interface | IP Address | Subnet | Default Gateway |
