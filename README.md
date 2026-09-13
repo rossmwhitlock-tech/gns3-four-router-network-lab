@@ -66,3 +66,6 @@ AlpinePC-4 (192.168.2.10/24)
 | AlpinePC-14 | eth0 | 192.168.4.10 | 192.168.4.0/24 | 192.168.4.1 |
 | AlpinePC-4 | eth0 | 192.168.2.10 | 192.168.2.0/24 | 192.168.2.1 |
 
+## Lab Evidence
+
+![Four-router GNS3 topology with successful multi-hop traceroute](screenshots/4_LAN.png)
