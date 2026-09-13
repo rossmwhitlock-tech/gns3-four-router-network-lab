@@ -80,3 +80,16 @@ Router1               10.0.12.0/30          Router2               10.0.23.0/30  
 - Used ARP/neighbor-table inspection and Wireshark packet captures to validate local MAC resolution and packet behavior.
 
 
+## Troubleshooting Highlights
+
+- Diagnosed lost IPv4 configuration after Alpine container restarts and restored interface addresses, subnet masks, and default gateways.
+
+- Used `ip route`, `ip route get`, and `traceroute` to identify incorrect next-hop routes and repair broken multi-hop connectivity.
+
+- Used `ip neigh`, ARP behavior, and Wireshark captures to distinguish Layer 2 reachability problems from routing problems.
+
+- Resolved routing failures caused by incorrect interface addressing and wrong next-hop values on /30 transit networks.
+
+- Diagnosed host-level forwarding blocked by Docker/iptables rules and restored libvirt/GNS3 Internet access by correcting the `DOCKER-USER` forwarding path.
+
+
